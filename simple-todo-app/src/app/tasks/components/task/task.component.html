@@ -1,7 +1,7 @@
 <mat-list-item>
     <input class="task" (change)="updateTask()" [(ngModel)]="task.task">
     <div *ngIf="task.dateDue">
-        <div [ngClass]="(taskOverDue())? 'danger':'success'" class="badge"> {{ task.dateDue | date }} </div>
+        <div [ngClass]="(taskOverDue())? 'danger':'success'" class="badge"> {{ task.dateDue.toDate() | date }} </div>
     </div>
     <div>
         <mat-icon (click)="completeTask()" class="complete">done_all</mat-icon>

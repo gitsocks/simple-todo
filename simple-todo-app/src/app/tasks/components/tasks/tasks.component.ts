@@ -10,7 +10,7 @@ import { TodoService } from 'src/app/shared/services/todo/todo.service';
 
 export class TasksComponent implements OnInit {
 
-  newTask: Task = { id: 0, task: '', dateCreated: null, completed: false};
+  newTask: Task = { id: '', task: '', dateCreated: null, completed: false};
   showCompleted: boolean = false;
 
   constructor(private todo: TodoService) { }
@@ -18,14 +18,14 @@ export class TasksComponent implements OnInit {
   ngOnInit() { }
 
   getTasks() {
-      return this.todo.tasks.filter(task => task.completed == this.showCompleted);
+    if (this.todo.tasks) return this.todo.tasks.filter(task => task.completed == this.showCompleted);
   }
 
   addTask(event) {
     if (event.key === "Enter") {
       console.log(this.newTask.dateDue)
       this.todo.add(this.newTask);
-      this.newTask = { id: 0, task: '', dateCreated: null, completed: false};
+      this.newTask = { id: '', task: '', dateCreated: null, completed: false};
     }
   }
 
