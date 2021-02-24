@@ -1,0 +1,26 @@
+<div class="header flex justify-content-between align-center">
+    <h1> ⚡️ To Do </h1>
+    <mat-slide-toggle (change)="toggleCompleted()" class="example-margin">
+        <span *ngIf="showCompleted"> Hide Completed </span>
+        <span *ngIf="!showCompleted"> Show Completed </span>
+    </mat-slide-toggle>
+</div>
+
+<div class="new-task-form flex justify-content-between">
+    <mat-form-field class="new-task-input">
+        <mat-label> 🚀 Add Task</mat-label>
+        <input (keydown)="addTask($event)" [(ngModel)]="newTask.task" matInput placeholder="ex. ☕️ Make some coffee">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Due Date</mat-label>
+        <input [(ngModel)]="newTask.dateDue" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+
+<mat-list>
+    <div *ngFor="let task of getTasks()">
+        <app-task [task]="task"></app-task>
+    </div>
+</mat-list>

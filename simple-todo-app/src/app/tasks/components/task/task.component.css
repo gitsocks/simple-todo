@@ -1,0 +1,47 @@
+.task {
+    border: none;
+    width: 50%;
+}
+
+.task:focus {
+    box-shadow: none;
+    outline: none;
+    background-color: rgb(240, 240, 240);
+}
+
+mat-icon:hover {
+    cursor: pointer;
+    color: red;
+}
+
+mat-icon.complete {
+    margin-right: 10px;
+    color: rgb(152, 231, 156);
+}
+
+mat-icon.complete:hover {
+    margin-right: 10px;
+    color: rgb(0, 224, 11);
+}
+
+mat-icon.delete {
+    color: rgb(231, 152, 152);
+}
+mat-icon.delete:hover {
+    color: rgb(224, 0, 0);
+}
+
+.badge {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.3rem;
+    border-radius: 5px;
+}
+
+.badge.danger {
+    background-color: rgb(216, 154, 154);
+}
+.badge.success {
+    background-color: rgb(154, 216, 203);
+}
