@@ -113,8 +113,13 @@
               "devServerTarget": "simple-todo-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "simple-todo-app"
 }

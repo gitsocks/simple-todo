@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "thinwood-tasks": {
+      "hosting": {
+        "simple-todo-app": [
+          "thinwood-tasks"
+        ]
+      }
+    }
+  }
+}
